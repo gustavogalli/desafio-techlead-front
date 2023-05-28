@@ -27,4 +27,8 @@ export class BookService {
     return this.http.put<Book>(`${API_CONFIG.baseUrl}/books/${book.id}`, book);
   }
 
+  delete(id: number): Observable<void>{
+    return this.http.delete<void>(`${API_CONFIG.baseUrl}/books/${id}`);
+  }
+
 }

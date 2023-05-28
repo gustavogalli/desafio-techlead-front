@@ -1,0 +1,24 @@
+<div class="container w-50">
+    <h2 class="text-center my-5">Delete book</h2>
+
+    <div class="mb-3">
+        <input [(ngModel)]="book.isbn" [disabled]="true" name="isbn" maxlength="50" type="text" class="form-control" id="isbn" placeholder="ISBN">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.title" [disabled]="true" name="title" type="text" class="form-control" id="title" placeholder="Title">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.author" [disabled]="true" name="author" type="text" class="form-control" id="author" placeholder="Author">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.publisher" [disabled]="true" name="publisher" type="text" class="form-control" id="publisher" placeholder="Publisher">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.pageQty" [disabled]="true" name="pageQty" type="number" class="form-control" id="pageQty" placeholder="Page quantity">
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center py-2">
+        <button type="button" class="btn btn-danger w-50" routerLink="/book-list">Back</button>
+        <button (click)="delete()" type="button" class="btn btn-success w-50">Delete</button>  
+    </div>
+</div>

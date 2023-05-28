@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookCreateComponent } from './components/book-create/book-create.component';
 import { BookUpdateComponent } from './components/book-update/book-update.component';
+import { BookDeleteComponent } from './components/book-delete/book-delete.component';
 
 const routes: Routes = [
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'book-list', component: BookListComponent},
   {path: 'book-create', component: BookCreateComponent},
-  {path: 'book-update/:id', component: BookUpdateComponent}
+  {path: 'book-update/:id', component: BookUpdateComponent},
+  {path: 'book-delete/:id', component: BookDeleteComponent}
 
 ];
 
