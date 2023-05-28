@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ForgotPasswordComponent {
 
+  constructor() { }
+
+  ngOnInit() { 
+    window.scroll(0, 0)
+  }
+
 }
