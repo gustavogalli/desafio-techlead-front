@@ -12,11 +12,19 @@ export class BookService {
   constructor(private http: HttpClient){}
   
   findAll(): Observable<Book[]>{
-    return this.http.get<Book[]>('http://localhost:8080/books');
+    return this.http.get<Book[]>(`${API_CONFIG.baseUrl}/books`);
+  }
+
+  findById(id: number): Observable<Book>{
+    return this.http.get<Book>(`${API_CONFIG.baseUrl}/books/${id}`);
   }
 
   create(book: Book): Observable<Book>{
     return this.http.post<Book>(`${API_CONFIG.baseUrl}/books`, book);
+  }
+
+  update(book: Book): Observable<Book>{
+    return this.http.put<Book>(`${API_CONFIG.baseUrl}/books/${book.id}`, book);
   }
 
 }
