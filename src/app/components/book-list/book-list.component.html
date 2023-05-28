@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="text-center my-5">Books</h2>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Page quantity</th>
+        <th scope="col">Uploaded by</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <th>{{ book.title }}</th>
+        <th>{{ book.author }}</th>
+        <th>{{ book.publisher }}</th>
+        <th>{{ book.pageQty }}</th>
+        <th>{{ book.uploader }}</th>
+        <th>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button routerLink="update/{{ book.id }}" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+            <button routerLink="delete/{{ book.id }}" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success w-100" routerLink="/book-upload">Upload a new book</button>
+</div>

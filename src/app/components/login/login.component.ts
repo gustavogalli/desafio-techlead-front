@@ -34,7 +34,7 @@ export class LoginComponent {
   login() {
     this.service.authenticate(this.credentials).subscribe(response => {
       this.service.successfulLogin(response.headers.get('Authorization').substring(7));
-      this.router.navigate(['']);
+      this.router.navigate(['/book-list']);
     }
     ,
      () => {

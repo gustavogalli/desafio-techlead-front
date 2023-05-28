@@ -10,13 +10,16 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule } from 'ngx-mask';
 import { ToastrModule } from 'ngx-toastr';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     }),
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
