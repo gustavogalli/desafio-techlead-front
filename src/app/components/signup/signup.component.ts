@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Customer } from '../models/Customer';
 
 @Component({
   selector: 'app-signup',
@@ -7,10 +8,17 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+  customer: Customer = new Customer();
+
+  passwordCheck: string;
+
   constructor() { }
 
   ngOnInit() { 
     window.scroll(0, 0)
+  }
+
+  signup(){
   }
 
 }
