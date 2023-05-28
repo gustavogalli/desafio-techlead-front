@@ -31,8 +31,6 @@ export class ForgotPasswordComponent {
     this.service.findByCpf(this.existingCustomer.cpf).subscribe(response => {
 
       if (this.existingCustomer.name == response.name && this.existingCustomer.email == response.email) {
-        console.log("achei um usuário com a senha: " + response.password)
-        console.log("você quer colocar a senha nova: " + this.existingCustomer.password)
         response.password = this.existingCustomer.password;
         this.changePassword(response);
       }
@@ -41,7 +39,17 @@ export class ForgotPasswordComponent {
 
   changePassword(foundCustomer: Customer) {
     this.service.update(foundCustomer).subscribe(response => {
+      this.toastr.success('Password successfully updated!', 'Success', { timeOut: 5000 });
       this.customer = response;
+      this.router.navigate(['/login'])
+    }, exception => {
+      if(exception.error.errors){
+        exception.error.errors.forEach(element => {
+          this.toastr.error(element.message);
+        });
+      } else {
+        this.toastr.error(exception.error.message);
+      }
     })
   }
 
