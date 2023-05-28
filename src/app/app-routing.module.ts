@@ -4,13 +4,15 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { BookCreateComponent } from './components/book-create/book-create.component';
 
 const routes: Routes = [
 
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'book-list', component: BookListComponent}
+  {path: 'book-list', component: BookListComponent},
+  {path: 'book-create', component: BookCreateComponent}
 
 ];
 
