@@ -1,1 +1,24 @@
-<p>book-create works!</p>
+<div class="container w-50">
+    <h2 class="text-center my-5">Add a new book</h2>
+
+    <div class="mb-3">
+        <input [(ngModel)]="book.isbn" name="isbn" maxlength="50" [formControl]="isbn" required type="text" class="form-control" id="isbn" placeholder="ISBN">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.title" name="title" [formControl]="title" required type="text" class="form-control" id="title" placeholder="Title">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.author" name="author" [formControl]="author" required type="text" class="form-control" id="author" placeholder="Author">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.publisher" name="publisher" [formControl]="publisher" required type="text" class="form-control" id="publisher" placeholder="Publisher">
+    </div>
+    <div class="mb-3">
+        <input [(ngModel)]="book.pageQty" name="pageQty" [formControl]="pageQty" required type="number" class="form-control" id="pageQty" placeholder="Page quantity">
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center py-2">
+        <button type="button" class="btn btn-danger w-50" routerLink="/book-list">Back</button>
+        <button (click)="create()" type="button" class="btn btn-success w-50" [disabled]="!validateFiels()">Add</button>  
+    </div>
+</div>

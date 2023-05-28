@@ -15,4 +15,8 @@ export class BookService {
     return this.http.get<Book[]>('http://localhost:8080/books');
   }
 
+  create(book: Book): Observable<Book>{
+    return this.http.post<Book>(`${API_CONFIG.baseUrl}/books`, book);
+  }
+
 }
