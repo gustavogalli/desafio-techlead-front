@@ -36,22 +36,19 @@ export class SignupComponent {
   }
 
   signup(){
-    console.log("customer preenchido")
-    console.log(this.customer)
     this.service.create(this.customer).subscribe(() => {
-      alert("ok")
-    //   this.toastr.success('User created!', 'New user', { timeOut: 4000 });
-    //   this.customer = new Customer();
-    //   this.router.navigate(['/login'])
-    // }, exception => {
-    //   if(exception.error.errors){
-    //     exception.error.errors.forEach(element => {
-    //       this.toastr.error(element.message);
-    //     });
-    //   } else {
-    //     this.toastr.error(exception.error.message);
-    //   }
-    // 
+      this.toastr.success('User created!', 'Success', { timeOut: 4000 });
+      this.customer = new Customer();
+      this.router.navigate(['/login'])
+    }, exception => {
+      if(exception.error.errors){
+        exception.error.errors.forEach(element => {
+          this.toastr.error(element.message);
+        });
+      } else {
+        this.toastr.error(exception.error.message);
+      }
+    
   })
   }
 

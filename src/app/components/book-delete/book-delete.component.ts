@@ -33,7 +33,7 @@ export class BookDeleteComponent {
 
   delete(){
     this.service.delete(this.book.id).subscribe(response => {
-      this.toastr.success("Book successfully deleted", "Book deleted", { timeOut: 4000 });
+      this.toastr.success("Book successfully deleted", "Success", { timeOut: 4000 });
       this.router.navigate(['/book-list'])
     }, exception => {
       if(exception.error.errors){

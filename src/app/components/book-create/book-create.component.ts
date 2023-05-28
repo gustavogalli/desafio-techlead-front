@@ -41,7 +41,7 @@ export class BookCreateComponent {
 
   create(){
     this.service.create(this.book).subscribe(() => {
-      this.toastr.success('Book successfully added!', 'New book added', { timeOut: 4000 });
+      this.toastr.success('Book successfully added!', 'Success', { timeOut: 4000 });
       this.book = new Book();
       this.router.navigate(['/book-list'])
     }, exception => {

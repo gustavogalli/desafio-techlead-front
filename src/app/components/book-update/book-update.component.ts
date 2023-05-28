@@ -48,7 +48,7 @@ export class BookUpdateComponent {
 
   update(){
     this.service.update(this.book).subscribe(() => {
-      this.toastr.success('Book successfully updated!', 'Book updated', { timeOut: 4000 });
+      this.toastr.success('Book successfully updated!', 'Success', { timeOut: 4000 });
       this.book = new Book();
       this.router.navigate(['/book-list'])
     }, exception => {
