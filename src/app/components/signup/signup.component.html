@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<div class="container-fluid">
+    <div class="row d-flex align-items-center h-100">
+
+        <div class="col-md-4" id="img-bg"></div>
+
+        <div class="col-md-8 my-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 w-75">
+                    <h1 class="text-center">Sign Up</h1>
+
+                    <div class="py-4">
+                        <div class="form-group py-2">
+                            <label for="name">Name</label>
+                            <input class="form-control" type="text" name="name" id="name"
+                                placeholder="full name, please">
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="cpf">CPF</label>
+                            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text" name="email" id="email"
+                                placeholder="example@mail.com">
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" name="password" id="password"
+                                placeholder="create a password">
+                        </div>
+
+                        <div class="form-group pb-2">
+                            <input class="form-control" type="password" name="confirm-password" id="confirm-password"
+                                placeholder="repeat your password">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center pt-4">
+                        <button type="submit" class="btn btn-danger w-25 me-2" routerLink='/login'>Cancel</button>
+                        <button type="submit" class="btn btn-success w-25 ms-2">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+#img-bg{
+    background-image: url(https://media.newyorker.com/photos/63a4964f9a1485c25e918cd9/master/w_2560%2Cc_limit/Shouts-Elson-Reading.jpg);
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

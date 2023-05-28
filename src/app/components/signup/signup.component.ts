@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+  constructor() { }
+
+  ngOnInit() { 
+    window.scroll(0, 0)
+  }
+
 }
