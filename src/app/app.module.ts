@@ -12,6 +12,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ToastrModule } from 'ngx-toastr';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { BookCreateComponent } from './components/book-create/book-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    BookListComponent
+    BookListComponent,
+    BookCreateComponent
   ],
   imports: [
     BrowserModule,
