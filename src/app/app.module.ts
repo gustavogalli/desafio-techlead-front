@@ -18,6 +18,7 @@ import { BookUpdateComponent } from './components/book-update/book-update.compon
 import { BookDeleteComponent } from './components/book-delete/book-delete.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { BookLendingComponent } from './components/book-lending/book-lending.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './components/home/home.component';
     BookUpdateComponent,
     BookDeleteComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    BookLendingComponent
   ],
   imports: [
     BrowserModule,
