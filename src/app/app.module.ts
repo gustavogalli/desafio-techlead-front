@@ -17,6 +17,7 @@ import { BookCreateComponent } from './components/book-create/book-create.compon
 import { BookUpdateComponent } from './components/book-update/book-update.component';
 import { BookDeleteComponent } from './components/book-delete/book-delete.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './components/header/header.component';
     BookCreateComponent,
     BookUpdateComponent,
     BookDeleteComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
