@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Customer } from 'src/app/models/Customer';
 import { Loan } from 'src/app/models/Loan';
+import { CustomerService } from 'src/app/services/customer.service';
 import { LoanService } from 'src/app/services/loan.service';
 
 @Component({
@@ -11,11 +13,13 @@ import { LoanService } from 'src/app/services/loan.service';
 export class LoanDelayComponent {
 
   loan: Loan = new Loan();
+  customer: Customer = new Customer();
 
   constructor(
     private service: LoanService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private customerService: CustomerService
   ) { }
 
   ngOnInit() {
@@ -30,17 +34,18 @@ export class LoanDelayComponent {
   }
 
   delay() {
-    console.log('antes')
-    console.log(this.loan)
+    this.penaltyToCustomer();
     this.loan.status = 2;
-    console.log('depois')
-    console.log(this.loan)
     this.service.update(this.loan).subscribe(response => {
       this.loan = response;
       this.router.navigate(['/loan-management'])
     })
+  }
 
+  penaltyToCustomer(){
+    this.customerService.findById(this.loan.customer).subscribe(response => {
 
+    })
   }
 
 }
