@@ -1,5 +1,3 @@
-import { Customer } from "./Customer";
-
 export class Book {
 
     id?: any;
@@ -10,5 +8,6 @@ export class Book {
     pageQty: number;
     uploader: number;
     borrower?: number;
+    status: number;
 
 }

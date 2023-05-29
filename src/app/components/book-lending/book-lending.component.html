@@ -1,1 +1,28 @@
-<p>book-lending works!</p>
+<div class="container d-flex flex-column w-50">
+    <h1 class="py-4 text-center">Borrow a book</h1>
+
+    <div class="w-100">
+
+        <div class="mb-3 w-100">
+            <select [(ngModel)]="bookId" name="cliente" class="form-select">
+                <option selected>Choose a book</option>
+                <option *ngFor="let book of books" value="{{ book.id }}">
+                    {{ book.title }}
+                </option>
+            </select>
+        </div>
+
+
+    <div class="mb-3">
+        <input [(ngModel)]="loan.loanDays" name="loanDays" type="number" class="form-control" id="loanDays" placeholder="Loan days">
+    </div>
+
+    </div>
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center py-2">
+        <button type="button" class="btn btn-danger w-50" routerLink="/">Voltar</button>
+        <button (click)="create()" [disabled]="!validateFields()" type="button" class="btn btn-success w-50">Abrir novo chamado</button>
+    </div>
+
+</div>
