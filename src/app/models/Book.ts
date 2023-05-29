@@ -8,7 +8,7 @@ export class Book {
     author: string;
     publisher: string;
     pageQty: number;
-    uploader: Customer;
-    borrower: Customer;
+    uploader: number;
+    borrower?: number;
 
 }

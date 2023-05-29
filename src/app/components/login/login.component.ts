@@ -33,6 +33,7 @@ export class LoginComponent {
 
   login() {
     this.service.authenticate(this.credentials).subscribe(response => {
+      localStorage.setItem('email', this.credentials.email);
       this.service.successfulLogin(response.headers.get('Authorization').substring(7));
       this.toastr.success('You are logged in!', 'Success', {timeOut: 5000});
       this.router.navigate(['/book-list']);

@@ -1,13 +1,12 @@
 <div class="container">
-    <h2 class="text-center my-5">Books</h2>
+    <h2 class="text-center my-5">Books from {{ customer.name }}</h2>
 <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">Publisher</th>
-        <th scope="col">Page quantity</th>
-        <th scope="col">Added by</th>
+        <th scope="col">Pages</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -17,7 +16,6 @@
         <th>{{ book.author }}</th>
         <th>{{ book.publisher }}</th>
         <th>{{ book.pageQty }}</th>
-        <th>{{ book.uploader }}</th>
         <th>
           <div class="btn-group" role="group" aria-label="Basic outlined example">
             <button routerLink="/book-update/{{ book.id }}" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>

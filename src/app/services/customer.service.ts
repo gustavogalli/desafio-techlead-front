@@ -23,6 +23,10 @@ export class CustomerService {
     return this.http.get<Customer>(`${API_CONFIG.baseUrl}/customers/cpf/${cpf}`);
   }
 
+  findByEmail(email: string): Observable<Customer>{
+    return this.http.get<Customer>(`${API_CONFIG.baseUrl}/customers/email/${email}`)
+  }
+
   create(customer: Customer): Observable<Customer>{
     return this.http.post<Customer>(`${API_CONFIG.baseUrl}/customers`, customer);
   }
