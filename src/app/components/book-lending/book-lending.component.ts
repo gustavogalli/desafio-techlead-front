@@ -4,6 +4,7 @@ import { Customer } from 'src/app/models/Customer';
 import { Loan } from 'src/app/models/Loan';
 import { BookService } from 'src/app/services/book.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { LoanService } from 'src/app/services/loan.service';
 
 @Component({
   selector: 'app-book-lending',
@@ -20,9 +21,9 @@ export class BookLendingComponent {
   loan: Loan = {
     book: 0,
     customer: 0,
-    loanDays: 0,
+    loanDays: null,
     loanApproved: false,
-    status: 0,
+    status: 8,
   }
 
   constructor(
@@ -51,6 +52,9 @@ export class BookLendingComponent {
   create() {
     this.loan.book = parseInt(this.bookId)
     this.loan.customer = this.customer.id
+    this.loanService.create(this.loan).subscribe(response => {
+      console.log(response);
+    })
     
   }
 
