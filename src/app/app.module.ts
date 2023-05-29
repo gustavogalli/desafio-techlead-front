@@ -16,6 +16,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { BookCreateComponent } from './components/book-create/book-create.component';
 import { BookUpdateComponent } from './components/book-update/book-update.component';
 import { BookDeleteComponent } from './components/book-delete/book-delete.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BookDeleteComponent } from './components/book-delete/book-delete.compon
     BookListComponent,
     BookCreateComponent,
     BookUpdateComponent,
-    BookDeleteComponent
+    BookDeleteComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
