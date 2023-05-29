@@ -21,7 +21,13 @@
                 <th>{{ loan.loanDays }}</th>
                 <th>{{ approvedBooleanToString(loan.loanApproved) }}</th>
                 <th>{{ statusIdtoString(loan.status) }}</th>
-                <th><button></button></th>
+                <th>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-success">Approve</button>
+                        <button type="button" class="btn btn-warning">Return</button>
+                        <button type="button" class="btn btn-danger">Delay</button>
+                      </div>
+                </th>
         </tbody>
     </table>
     <button type="button" class="btn btn-secondary w-100" routerLink="">Back</button>
