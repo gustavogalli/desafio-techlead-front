@@ -13,8 +13,6 @@ export class BookListComponent {
 
   books: Book[] = [];
 
-  customers: Customer[];
-
   customer: Customer = new Customer;
 
   constructor(
@@ -24,7 +22,7 @@ export class BookListComponent {
 
   ngOnInit(): void{
     this.findAll();
-    this.findAllCustomers();
+    this.findCurrentCustomer();
   }
 
   findAll(): void{
@@ -33,11 +31,10 @@ export class BookListComponent {
     })
   }
 
-  findAllCustomers(){
-    this.customerService.findAll().subscribe(response => {
-      this.customers = response;
-      console.log(this.customers)
-    })
+  findCurrentCustomer(){
+    this.customerService.findByEmail(localStorage.getItem('email')).subscribe(response => {
+      this.customer = response;
+    });
   }
 
 }

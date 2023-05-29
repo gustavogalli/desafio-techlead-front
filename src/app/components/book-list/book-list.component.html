@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="text-center my-5">Books from {{ customer.name }}</h2>
+    <h2 class="text-center my-5">Books</h2>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -17,7 +17,7 @@
         <th>{{ book.publisher }}</th>
         <th>{{ book.pageQty }}</th>
         <th>
-          <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <div *ngIf="customer.id == book.uploader" class="btn-group" role="group" aria-label="Basic outlined example">
             <button routerLink="/book-update/{{ book.id }}" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
             <button routerLink="/book-delete/{{ book.id }}" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
           </div>
