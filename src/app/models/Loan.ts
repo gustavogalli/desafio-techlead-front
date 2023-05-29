@@ -6,5 +6,7 @@ export class Loan {
     loanDays: number;
     loanApproved: boolean;
     status: number;
+    startDate: any;
+    endDate: any;
 
 }

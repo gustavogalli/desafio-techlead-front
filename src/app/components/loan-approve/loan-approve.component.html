@@ -1,1 +1,36 @@
-<p>loan-approve works!</p>
+<div class="container d-flex flex-column w-50">
+    <h1 class="py-4 text-center">Loan approve</h1>
+
+    <div class="w-100">
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Id</label>
+            <input [disabled]="true" [(ngModel)]="loan.id" name="id" type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Book Id</label>
+            <input [disabled]="true" [(ngModel)]="loan.book" name="book" type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Customer Id</label>
+            <input [disabled]="true" [(ngModel)]="loan.customer" name="customer" type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Loan Days</label>
+            <input [disabled]="true" [(ngModel)]="loan.loanDays" name="loanDays" type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Approved?</label>
+            <input [disabled]="true" [(ngModel)]="loan.loanApproved" name="loanApproved" type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Status</label>
+            <input [disabled]="true" [(ngModel)]="loan.status" name="status" type="text" class="form-control" id="titulo">
+        </div>
+    </div>
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center py-2">
+        <button type="button" class="btn btn-success w-100" (click)="approve()">Approve</button>
+    </div>
+
+</div>

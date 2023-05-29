@@ -7,7 +7,8 @@
                 <th scope="col">Id</th>
                 <th scope="col">Book ID</th>
                 <th scope="col">Customer ID</th>
-                <th scope="col">Loan Days</th>
+                <th scope="col">Start date</th>
+                <th scope="col">End date</th>
                 <th scope="col">Approved?</th>
                 <th scope="col">Status</th>
                 <th scope="col">Actions</th>
@@ -18,14 +19,15 @@
                 <th>{{ loan.id }}</th>
                 <th>{{ loan.book }}</th>
                 <th>{{ loan.customer }}</th>
-                <th>{{ loan.loanDays }}</th>
+                <th>{{ loan.startDate }}</th>
+                <th>{{ loan.endDate }}</th>
                 <th>{{ approvedBooleanToString(loan.loanApproved) }}</th>
                 <th>{{ statusIdtoString(loan.status) }}</th>
                 <th>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button routerLink="/loan-approve" type="button" class="btn btn-success">Approve</button>
-                        <button routerLink="/loan-return" type="button" class="btn btn-warning">Return</button>
-                        <button routerLink="/loan-delay" type="button" class="btn btn-danger">Delay</button>
+                        <button routerLink="/loan-approve/{{loan.id}}" type="button" class="btn btn-success">Approve</button>
+                        <button routerLink="/loan-return/{{loan.id}}" type="button" class="btn btn-warning">Return</button>
+                        <button routerLink="/loan-delay/{{loan.id}}" type="button" class="btn btn-danger">Delay</button>
                       </div>
                 </th>
         </tbody>

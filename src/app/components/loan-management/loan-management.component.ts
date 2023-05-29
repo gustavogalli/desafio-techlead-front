@@ -59,8 +59,12 @@ export class LoanManagementComponent {
   statusIdtoString(id: number){
     if(id == 8) {
       return 'OPEN';
-    } else {
+    } else if (id == 9){
       return 'CLOSED';
+    } else if (id == 2){
+      return 'OVERDUE';
+    } else {
+      return null;
     }
   }
 

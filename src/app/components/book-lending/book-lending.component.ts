@@ -24,6 +24,8 @@ export class BookLendingComponent {
     loanDays: null,
     loanApproved: false,
     status: 8,
+    startDate: '',
+    endDate: ''
   }
 
   constructor(
