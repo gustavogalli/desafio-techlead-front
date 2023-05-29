@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BookLendingComponent } from './components/book-lending/book-lending.component';
 import { LoanManagementComponent } from './components/loan-management/loan-management.component';
 import { LoanApproveComponent } from './components/loan-approve/loan-approve.component';
+import { LoanReturnComponent } from './components/loan-return/loan-return.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoanApproveComponent } from './components/loan-approve/loan-approve.com
     HomeComponent,
     BookLendingComponent,
     LoanManagementComponent,
-    LoanApproveComponent
+    LoanApproveComponent,
+    LoanReturnComponent
   ],
   imports: [
     BrowserModule,
