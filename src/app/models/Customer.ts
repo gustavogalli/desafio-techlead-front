@@ -6,6 +6,8 @@ export class Customer {
     cpf: string;
     email: string;
     password: string;
+    type: string;
+    profiles: number[];
     uploadedBooks?: number[];
     borrowedBooks?: number[];
 }
