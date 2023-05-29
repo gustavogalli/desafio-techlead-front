@@ -22,6 +22,7 @@ import { BookLendingComponent } from './components/book-lending/book-lending.com
 import { LoanManagementComponent } from './components/loan-management/loan-management.component';
 import { LoanApproveComponent } from './components/loan-approve/loan-approve.component';
 import { LoanReturnComponent } from './components/loan-return/loan-return.component';
+import { LoanDelayComponent } from './components/loan-delay/loan-delay.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoanReturnComponent } from './components/loan-return/loan-return.compon
     BookLendingComponent,
     LoanManagementComponent,
     LoanApproveComponent,
-    LoanReturnComponent
+    LoanReturnComponent,
+    LoanDelayComponent
   ],
   imports: [
     BrowserModule,
