@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Book } from 'src/app/models/Book';
 import { Customer } from 'src/app/models/Customer';
 import { Loan } from 'src/app/models/Loan';
@@ -31,7 +33,9 @@ export class BookLendingComponent {
   constructor(
     private bookService: BookService,
     private customerService: CustomerService,
-    private loanService: LoanService
+    private loanService: LoanService,
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -55,9 +59,17 @@ export class BookLendingComponent {
     this.loan.book = parseInt(this.bookId)
     this.loan.customer = this.customer.id
     this.loanService.create(this.loan).subscribe(response => {
-      console.log(response);
+      this.toastr.success('Loan created!', 'Success', { timeOut: 4000 });
+      this.router.navigate(['/home'])
+    }, exception => {
+      if(exception.error.errors){
+        exception.error.errors.forEach(element => {
+          this.toastr.error(element.message);
+        });
+      } else {
+        this.toastr.error(exception.error.message);
+      }
     })
-    
   }
 
   validateFields() {

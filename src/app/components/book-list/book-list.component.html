@@ -7,7 +7,6 @@
         <th scope="col">Author</th>
         <th scope="col">Publisher</th>
         <th scope="col">Pages</th>
-        <th scope="col">Uploader</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -17,7 +16,6 @@
         <th>{{ book.author }}</th>
         <th>{{ book.publisher }}</th>
         <th>{{ book.pageQty }}</th>
-        <th>{{ book.uploader }} - {{ customer.type }}</th>
         <th>
           <div *ngIf="customer.id == book.uploader || adminLoggedIn" class="btn-group" role="group" aria-label="Basic outlined example">
             <button routerLink="/book-update/{{ book.id }}" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
@@ -27,5 +25,6 @@
       </tr>
     </tbody>
   </table>
-  <button type="button" class="btn btn-success w-100" routerLink="/book-create">Add a new book</button>
+  <button type="button" class="btn btn-success w-100 my-2" routerLink="/book-create">Add a new book</button>
+  <button type="button" class="btn btn-danger w-100" routerLink="/home">Back</button>
 </div>
