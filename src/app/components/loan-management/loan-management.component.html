@@ -1,64 +1,36 @@
-<!-- <div class="container">
-    <h2 class="text-center my-5">Lista de chamados</h2>
-    <div class="my-3">
-        <div class="form-check">
-            <input (click)="orderByStatus(0)" class="form-check-input" type="radio" name="flexRadioDefault"
-                id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">ABERTO</label>
-        </div>
-        <div class="form-check">
-            <input (click)="orderByStatus(1)" class="form-check-input" type="radio" name="flexRadioDefault"
-                id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">ANDAMENTO</label>
-        </div>
-        <div class="form-check">
-            <input (click)="orderByStatus(2)" class="form-check-input" type="radio" name="flexRadioDefault"
-                id="flexRadioDefault3">
-            <label class="form-check-label" for="flexRadioDefault3">ENCERRADO</label>
-        </div>
-    </div>
+<div class="container">
+    <h2 class="text-center my-5">Loan management</h2>
 
     <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Título</th>
-                <th scope="col">Cliente</th>
-                <th scope="col">Técnico</th>
-                <th scope="col">Data de abertura</th>
-                <th scope="col">Prioridade</th>
+                <th scope="col">Title</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Loan Days</th>
+                <th scope="col">Approved?</th>
                 <th scope="col">Status</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let chamado of chamadosFiltrados">
-                <th>{{ chamado.id }}</th>
-                <th>{{ chamado.titulo }}</th>
-                <th>{{ chamado.nomeCliente }}</th>
-                <th>{{ chamado.nomeTecnico }}</th>
-                <th>{{ chamado.dataAbertura }}</th>
-                <th>{{ retornaPrioridade(chamado.prioridade) }}</th>
-                <th>{{ retornaStatus(chamado.status) }}</th>
+            <tr *ngFor="let loan of loans">
+                <th>{{ loan.id }}</th>
+                <th>{{ loan.book }}</th>
+                <th>{{ loan.customer }}</th>
+                <th>{{ loan.loanDays }}</th>
+                <th>{{ loan.loanApproved }}</th>
+                <th>{{ loan.status }}</th>
                 <th>
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <button routerLink="update/{{ chamado.id }}" type="button" class="btn btn-warning"><i
+                        <button routerLink="" type="button" class="btn btn-warning"><i
                                 class="bi bi-pencil-square"></i></button>
-                        <button routerLink="read/{{ chamado.id }}" type="button" class="btn btn-success"><i
+                        <button routerLink="" type="button" class="btn btn-success"><i
                                 class="bi bi-eye-fill"></i></button>
                     </div>
                 </th>
             </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-success w-100" routerLink="create">Novo chamado</button>
-</div> -->
-
-<p *ngFor="let loan of loans">
-    Id = {{ loan.id }}
-    Book = {{ loan.book }}
-    Customer = {{ loan.customer }}
-    Loan Days = {{ loan.loanDays }}
-    Approved = {{ loan.loanApproved }}
-    Status = {{ loan.status }}
-</p>
+    <button type="button" class="btn btn-secondary w-100" routerLink="">Back</button>
+</div>
