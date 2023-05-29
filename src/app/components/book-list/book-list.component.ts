@@ -13,7 +13,9 @@ export class BookListComponent {
 
   books: Book[] = [];
 
-  customer: Customer = new Customer;
+  customer: Customer = new Customer();
+
+  pessoas: Object[];
 
   constructor(
     private service: BookService,
@@ -22,7 +24,7 @@ export class BookListComponent {
 
   ngOnInit(): void{
     this.findAll();
-    this.findCurrentCustomer();
+    this.findCurrentUser();
   }
 
   findAll(): void{
@@ -31,10 +33,20 @@ export class BookListComponent {
     })
   }
 
-  findCurrentCustomer(){
-    this.customerService.findByEmail(localStorage.getItem('email')).subscribe(response => {
-      this.customer = response;
-    });
+  findCurrentUser(){
+    if(localStorage.getItem('admin') != null){
+      // pegar admin
+
+    } else {
+      // tentar achar por customer
+      this.customerService.findByEmail(localStorage.getItem('email')).subscribe(response => {
+        this.customer = response;
+        console.log(this.customer)
+      });
+      // se não encontrar, tentar achar por bibliotecario
+
+    }
+   
   }
 
 }
