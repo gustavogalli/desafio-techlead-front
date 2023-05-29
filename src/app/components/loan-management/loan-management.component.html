@@ -5,8 +5,8 @@
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Title</th>
-                <th scope="col">Customer</th>
+                <th scope="col">Book ID</th>
+                <th scope="col">Customer ID</th>
                 <th scope="col">Loan Days</th>
                 <th scope="col">Approved?</th>
                 <th scope="col">Status</th>
@@ -19,17 +19,9 @@
                 <th>{{ loan.book }}</th>
                 <th>{{ loan.customer }}</th>
                 <th>{{ loan.loanDays }}</th>
-                <th>{{ loan.loanApproved }}</th>
-                <th>{{ loan.status }}</th>
-                <th>
-                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <button routerLink="" type="button" class="btn btn-warning"><i
-                                class="bi bi-pencil-square"></i></button>
-                        <button routerLink="" type="button" class="btn btn-success"><i
-                                class="bi bi-eye-fill"></i></button>
-                    </div>
-                </th>
-            </tr>
+                <th>{{ approvedBooleanToString(loan.loanApproved) }}</th>
+                <th>{{ statusIdtoString(loan.status) }}</th>
+                <th><button></button></th>
         </tbody>
     </table>
     <button type="button" class="btn btn-secondary w-100" routerLink="">Back</button>

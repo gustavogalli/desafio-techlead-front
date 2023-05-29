@@ -14,6 +14,8 @@ import { LoanManagementComponent } from './components/loan-management/loan-manag
 
 const routes: Routes = [
 
+  {path:'', redirectTo:'login', pathMatch:'full'},
+  
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},

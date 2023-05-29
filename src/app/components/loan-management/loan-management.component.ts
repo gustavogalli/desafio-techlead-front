@@ -16,6 +16,7 @@ export class LoanManagementComponent {
   books: Book[];
   customers: Customer[];
   loans: Loan[];
+  bookTitle: string = null;
 
   constructor(
     private service: LoanService,
@@ -25,12 +26,42 @@ export class LoanManagementComponent {
 
   ngOnInit(){
     this.findAllLoans();
+    this.findAllBooks();
+    this.findAllCustomers();
   }
 
   findAllLoans(){
     this.service.findAll().subscribe(response => {
       this.loans = response;
     })
+  }
+  
+  findAllBooks(){
+    this.bookService.findAll().subscribe(response => {
+      this.books = response;
+    })
+  }
+  
+  findAllCustomers(){
+    this.customerService.findAll().subscribe(response => {
+      this.customers = response;
+    })
+  }
+
+  approvedBooleanToString(approved: boolean){
+    if(approved == true){
+      return 'Y';
+    } else {
+      return 'N';
+    }
+  }
+
+  statusIdtoString(id: number){
+    if(id == 8) {
+      return 'OPEN';
+    } else {
+      return 'CLOSED';
+    }
   }
 
 }
