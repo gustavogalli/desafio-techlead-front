@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'library';
+
+  jwtService: JwtHelperService  = new JwtHelperService();
+
+    isAuthenticated(){
+    let token = localStorage.getItem('token');
+    if(token != null){
+      return !this.jwtService.isTokenExpired(token);
+    }
+    return false;
+  }
 }
