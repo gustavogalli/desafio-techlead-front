@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>HOME</h1>
+
+            <button routerLink="/book-list" type="button" class="btn btn-success">See books</button>
+            <button routerLink="/book-create" type="button" class="btn btn-danger">Add book</button>
+            <button routerLink="/" type="button" class="btn btn-warning">Borrow book</button>
+            <button (click)="logout()" type="button" class="btn btn-info">Logout</button>
+
+        </div>
+    </div>
+</div>
