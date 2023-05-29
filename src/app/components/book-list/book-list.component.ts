@@ -48,7 +48,6 @@ export class BookListComponent {
         this.customer = response;
         console.log(this.customer)
       });
-      // se não encontrar, tentar achar por bibliotecario
 
     }
    

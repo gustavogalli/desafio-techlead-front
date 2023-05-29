@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" routerLink="/home">Library</a>
+      <a class="navbar-brand" routerLink="/home">Library</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,20 +13,15 @@
             <a routerLink="/book-list" class="nav-link">Books list</a>
           </li>
           <li class="nav-item">
-            <a routerLink="/book-lending" class="nav-link">Book lending</a>
+            <a routerLink="/book-lending" class="nav-link">Borrow a book</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isLibrarian()" class="nav-item">
             <a routerLink="/loan-management" class="nav-link">Loan management</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </ul>
-
-        <!-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>

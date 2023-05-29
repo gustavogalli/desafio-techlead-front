@@ -35,6 +35,8 @@ export class LoginComponent {
     this.service.authenticate(this.credentials).subscribe(response => {
       if(this.credentials.email.includes("admin@library.com")){
         localStorage.setItem('admin', this.credentials.email)
+      } else if (this.credentials.email.includes("librarian@library.com")) { 
+        localStorage.setItem('librarian', this.credentials.email)
       } else {
         localStorage.setItem('email', this.credentials.email);
       }
