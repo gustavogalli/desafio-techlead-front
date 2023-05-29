@@ -8,4 +8,5 @@ export class Customer {
     profiles: number[];
     uploadedBooks?: number[];
     borrowedBooks?: number[];
+    daysOfPenalty: number;
 }

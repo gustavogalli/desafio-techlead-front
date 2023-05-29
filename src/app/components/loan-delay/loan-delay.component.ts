@@ -14,6 +14,10 @@ export class LoanDelayComponent {
 
   loan: Loan = new Loan();
   customer: Customer = new Customer();
+  dueDate: any = this.loan.endDate;
+  currentDate: any = new Date().toLocaleDateString();
+  difference = this.currentDate - this.dueDate;
+
 
   constructor(
     private service: LoanService,
@@ -34,7 +38,7 @@ export class LoanDelayComponent {
   }
 
   delay() {
-    this.penaltyToCustomer();
+    this.findCustomerToPenalty();
     this.loan.status = 2;
     this.service.update(this.loan).subscribe(response => {
       this.loan = response;
@@ -42,10 +46,18 @@ export class LoanDelayComponent {
     })
   }
 
-  penaltyToCustomer(){
+  findCustomerToPenalty(){
     this.customerService.findById(this.loan.customer).subscribe(response => {
-
+      this.customer = response;
     })
+  }
+
+  penaltyCustomer(){    
+    if(this.difference < 10){
+      this.customer.daysOfPenalty = 2;
+    } else if (this.difference >= 10) {
+      this.customer.daysOfPenalty = 7
+    } 
   }
 
 }
