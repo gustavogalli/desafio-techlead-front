@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookLendingComponent } from './components/book-lending/book-lending.component';
 import { LoanManagementComponent } from './components/loan-management/loan-management.component';
+import { LoanApproveComponent } from './components/loan-approve/loan-approve.component';
+import { LoanReturnComponent } from './components/loan-return/loan-return.component';
+import { LoanDelayComponent } from './components/loan-delay/loan-delay.component';
 
 const routes: Routes = [
 
@@ -24,6 +27,9 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'book-lending', component: BookLendingComponent},
   {path: 'loan-management', component: LoanManagementComponent},
+  {path: 'loan-approve/:id', component: LoanApproveComponent},
+  {path: 'loan-return/:id', component: LoanReturnComponent},
+  {path: 'loan-delay/:id', component: LoanDelayComponent},
 
   {path: 'book-list', component: BookListComponent},
   {path: 'book-create', component: BookCreateComponent},
