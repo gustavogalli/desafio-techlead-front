@@ -19,7 +19,7 @@
         <th>{{ book.pageQty }}</th>
         <th>{{ book.uploader }} - {{ customer.type }}</th>
         <th>
-          <div *ngIf="customer.id == book.uploader" class="btn-group" role="group" aria-label="Basic outlined example">
+          <div *ngIf="customer.id == book.uploader || adminLoggedIn" class="btn-group" role="group" aria-label="Basic outlined example">
             <button routerLink="/book-update/{{ book.id }}" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
             <button routerLink="/book-delete/{{ book.id }}" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
           </div>

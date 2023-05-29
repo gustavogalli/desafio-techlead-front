@@ -1,4 +1,4 @@
-export class Customer {
+export class Admin {
     id?: any;
     name: string;
     cpf: string;

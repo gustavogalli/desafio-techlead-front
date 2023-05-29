@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Admin } from 'src/app/models/Admin';
 import { Book } from 'src/app/models/Book';
 import { Customer } from 'src/app/models/Customer';
+import { AdminService } from 'src/app/services/admin.service';
 import { BookService } from 'src/app/services/book.service';
 import { CustomerService } from 'src/app/services/customer.service';
 
@@ -13,12 +15,14 @@ export class BookListComponent {
 
   books: Book[] = [];
 
+  admin: Admin = new Admin();
   customer: Customer = new Customer();
 
-  pessoas: Object[];
+  adminLoggedIn: boolean = false;
 
   constructor(
     private service: BookService,
+    private adminService: AdminService,
     private customerService: CustomerService
     ){}
 
@@ -35,10 +39,11 @@ export class BookListComponent {
 
   findCurrentUser(){
     if(localStorage.getItem('admin') != null){
-      // pegar admin
-
+      this.adminService.findByEmail(localStorage.getItem('admin')).subscribe(response => {
+        this.admin = response;
+        this.adminLoggedIn = true;
+      });
     } else {
-      // tentar achar por customer
       this.customerService.findByEmail(localStorage.getItem('email')).subscribe(response => {
         this.customer = response;
         console.log(this.customer)
