@@ -1,12 +1,56 @@
-<div class="container-fluid">
+<div class="container-fluid w-50 mx-auto my-5">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center my-3">
             <h1>HOME</h1>
 
-            <button routerLink="/book-list" type="button" class="btn btn-success">See books</button>
-            <button routerLink="/book-create" type="button" class="btn btn-danger">Add book</button>
-            <button routerLink="/book-lending" type="button" class="btn btn-warning">Borrow book</button>
-            <button (click)="logout()" type="button" class="btn btn-info">Logout</button>
+            <div class="row my-5">
+                <div class="col-md-6">
+
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">See books</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a routerLink="/book-list" class="btn btn-success">Go!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Add a book</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a routerLink="/book-create" class="btn btn-danger">Let's go!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-4">
+                <div class="col-md-6">
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Borrow a book</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a routerLink="/book-lending" class="btn btn-warning">Okay!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Logout</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a (click)="logout()" class="btn btn-info">Bye!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
