@@ -19,6 +19,7 @@ import { BookDeleteComponent } from './components/book-delete/book-delete.compon
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookLendingComponent } from './components/book-lending/book-lending.component';
+import { LoanManagementComponent } from './components/loan-management/loan-management.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BookLendingComponent } from './components/book-lending/book-lending.com
     BookDeleteComponent,
     HeaderComponent,
     HomeComponent,
-    BookLendingComponent
+    BookLendingComponent,
+    LoanManagementComponent
   ],
   imports: [
     BrowserModule,

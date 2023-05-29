@@ -10,6 +10,7 @@ import { BookDeleteComponent } from './components/book-delete/book-delete.compon
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookLendingComponent } from './components/book-lending/book-lending.component';
+import { LoanManagementComponent } from './components/loan-management/loan-management.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'header', component: HeaderComponent},
   {path: 'home', component: HomeComponent},
   {path: 'book-lending', component: BookLendingComponent},
+  {path: 'loan-management', component: LoanManagementComponent},
 
   {path: 'book-list', component: BookListComponent},
   {path: 'book-create', component: BookCreateComponent},
